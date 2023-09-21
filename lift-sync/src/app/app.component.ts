@@ -3,15 +3,7 @@ import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div>
-      <p>Testing:</p>
-    </div>
-    <div *ngFor="let user of users">
-      {{ user.Username }}
-      {{ user.Password }}
-    </div>
-  `,
+  template: ` <router-outlet></router-outlet> `,
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
