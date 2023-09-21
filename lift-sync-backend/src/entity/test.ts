@@ -1,10 +1,13 @@
-import { Entity, PrimaryColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
 
-@Entity("UserTable")
+@Entity("user_table")
 export class UserTable {
-  @PrimaryColumn()
-  Username!: string;
+  @PrimaryGeneratedColumn("increment")
+  user_id!: number;
+
+  @Column({ unique: true })
+  username!: string;
 
   @Column()
-  Password!: string;
+  password_encrypted!: string;
 }
